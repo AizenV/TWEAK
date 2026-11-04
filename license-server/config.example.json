@@ -1,0 +1,13 @@
+{
+  "port": 8790,
+  "publicUrl": "https://lizenz.deine-domain.de",
+  "adminPassword": "MINDESTENS-12-ZEICHEN-HIER-ÄNDERN",
+  "trustProxy": true,
+  "plans": [
+    { "id": "week",     "name": "1 Woche", "days": 7,    "price": 5 },
+    { "id": "month",    "name": "1 Monat", "days": 30,   "price": 15 },
+    { "id": "lifetime", "name": "Lifetime", "days": null, "price": 30 }
+  ],
+  "discord": { "clientId": "", "clientSecret": "", "botToken": "", "guildId": "" },
+  "boost": { "secret": "", "days": 3 }
+}

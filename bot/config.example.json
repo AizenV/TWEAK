@@ -1,0 +1,54 @@
+{
+  "token": "DEIN_BOT_TOKEN",
+  "port": 8787,
+  "apiKey": "",
+  "intervalMin": 10,
+  "scanLimit": 300,
+  "categories": [
+    {
+      "id": "grafik",
+      "name": "Grafik-Mods"
+    },
+    {
+      "id": "sound",
+      "name": "Soundpacks"
+    },
+    {
+      "id": "minimap",
+      "name": "Minimaps"
+    },
+    {
+      "id": "waffen",
+      "name": "Waffenskins"
+    }
+  ],
+  "channels": [
+    {
+      "id": "111111111111111111",
+      "category": "grafik"
+    },
+    {
+      "id": "222222222222222222",
+      "category": "grafik"
+    },
+    {
+      "id": "333333333333333333",
+      "category": "sound"
+    },
+    {
+      "id": "444444444444444444",
+      "category": "minimap"
+    },
+    {
+      "id": "555555555555555555",
+      "category": "waffen"
+    }
+  ],
+  "boost": {
+    "enabled": false,
+    "guildId": "",
+    "licenseUrl": "http://localhost:8790",
+    "secret": "",
+    "prefetchMembers": true
+  }
+}

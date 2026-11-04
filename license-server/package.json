@@ -1,0 +1,12 @@
+{
+  "name": "attack-license-server",
+  "version": "1.0.0",
+  "description": "Lizenz-Server + Admin-Panel für Attack.tweaks (Discord-ID + Hardware-ID gebunden)",
+  "main": "server.js",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "client-config": "node server.js --client-config",
+    "test": "node test.js"
+  }
+}

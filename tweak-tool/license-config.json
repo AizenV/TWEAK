@@ -1,0 +1,11 @@
+{
+  "serverUrl": "https://lizenz.deine-domain.de",
+  "publicKey": "",
+  "graceHours": 72,
+  "buyUrl": "",
+  "plans": [
+    { "name": "1 Woche", "price": "5 €" },
+    { "name": "1 Monat", "price": "15 €" },
+    { "name": "Lifetime", "price": "30 €" }
+  ]
+}

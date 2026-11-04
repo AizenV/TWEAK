@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas><script src="crosshair-draw.js"></script><script>
+const q=new URLSearchParams(location.search),n=k=>+q.get(k),c={shape:q.get('shape'),color:q.get('color'),outline:q.get('outline')==='true',dot:q.get('dot')==='true'};
+['size','thick','gap','opacity','dotSize','ox','oy'].forEach(k=>c[k]=n(k));
+const sc=n('scale')||1,dpr=window.devicePixelRatio||1,cv=document.getElementById('c'),px=Math.ceil(240*sc);
+cv.width=Math.round(px*dpr);cv.height=Math.round(px*dpr);cv.style.width=px+'px';cv.style.height=px+'px';
+const x=cv.getContext('2d');x.scale(px*dpr/240,px*dpr/240);drawCrosshair(x,240,240,c);
+</script></body></html>

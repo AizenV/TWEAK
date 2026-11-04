@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Attack.tweaks</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="drag"></div>
+<aside class="side">
+  <div class="brand"><img src="logo.png" class="logo" alt=""><div class="bt"><b>Attack.tweaks</b><span>Gaming optimizer</span></div><button class="tbg" id="tbg" type="button" aria-label="Einstellungen" title="Einstellungen"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></div>
+  <nav>
+    <div class="grp">Übersicht</div>
+    <a class="nav" data-p="dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+    <a class="nav" data-p="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Suche</a>
+    <a class="nav" data-p="crosshair"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>Crosshair</a>
+    <div class="grp tgrp" id="twgrp">Tweaks<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div>
+    <a class="nav tw tw-empty" data-p="tw:CPU / RAM"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>CPU / RAM<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:GPU"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M15 10h4M15 14h4"/></svg>GPU<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:Power"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Power<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:Network"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Network<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:Windows"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Windows<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:Services"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>Services<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw tw-empty" data-p="tw:Sonstige"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>Sonstige<span class="cnt"><b>0</b><i></i></span></a>
+    <div class="grp">FiveM</div>
+    <a class="nav" data-p="fivem"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h14"/></svg>FiveM<span class="nb" id="fvbadge" hidden><i></i><b></b></span></a>
+    <a class="nav tw fvtw tw-empty" data-p="tw:WASD Input"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg>WASD Input<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav tw fvtw tw-empty" data-p="tw:Hit Reg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Hit Reg<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav" data-p="presets"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>FiveM Presets</a>
+    <a class="nav" data-p="fivemclean"><svg viewBox="0 0 24 24"><path d="m14 4 6 6M4 20l7-7M9.5 8.5l6 6M13 11l-9 9 3 0 8-8"/></svg>FiveM Clearen</a>
+    <div class="grp">Spiele</div>
+    <a class="nav" data-p="games"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 10v5M4.5 12.5h5M15.5 11h.01M18 14h.01"/></svg>Spiele<span class="nb" id="gmbadge" hidden><i></i><b></b></span></a>
+    <div class="grp">System</div>
+    <a class="nav" data-p="cleaner"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>Cleaner</a>
+    <a class="nav" data-p="sysinfo"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 10h2l1.5-2 2 4 1.5-2H17"/></svg>System Info</a>
+    <a class="nav tw fvtw tw-empty" data-p="tw:Treiber"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M13 9h5M13 13h5"/></svg>Treiber<span class="cnt"><b>0</b><i></i></span></a>
+    <a class="nav" data-p="backup"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5M12 8v4l3 2"/></svg>Backup</a>
+    <a class="nav" data-p="restore"><svg viewBox="0 0 24 24"><path d="M14 7l-5 5 5 5M20 12H9"/><path d="M4 4v16"/></svg>Restore</a>
+  </nav>
+  <div class="foot"><a class="licb" id="licb" role="button" tabindex="0">Lizenz</a><span>v1.0.0</span></div>
+</aside>
+<main>
+  <button class="btn menu" id="menu" type="button">☰ Menü</button>
+  <section id="p-dashboard" class="pg">
+    <div class="hd hrow"><div><h1>Dashboard</h1><p class="sub" id="dsub">Überblick über dein System und aktive Optimierungen.</p></div><span class="sp"></span><div class="row dq"><button class="btn pri" data-go="tweaks">Tweaks</button><button class="btn" data-go="cleaner">Cleaner</button><button class="btn" data-go="backup">Wiederherstellungspunkt</button></div><button class="btn" id="drf" hidden>Aktualisieren</button><button class="btn" id="dcu">Anpassen</button></div><div id="dce"></div>
+    <div class="grid4" id="kpis"></div>
+    <div class="row2">
+      <div class="panel card"><div class="ph"><h3>Systeminformationen</h3></div><div id="sysinfo" class="kv"></div></div>
+      <div class="panel card score"><div class="ph"><h3>Optimierungsgrad</h3></div>
+        <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="bg"/><circle cx="60" cy="60" r="52" class="fg" id="ringfg"/></svg><div class="rt"><b id="rpct">0%</b><span id="rsub">0 / 0 aktiv</span></div></div>
+        <button class="btn pri" id="applyAll">Alle empfohlenen anwenden</button></div>
+    </div>
+  </section>
+  <section id="p-sysinfo" class="pg">
+    <div class="hd hrow"><div><h1>System Info</h1><p class="sub">Hardware &amp; System-Details</p></div><span class="sp"></span><button class="btn" id="sirf">Aktualisieren</button></div>
+    <div class="grid4" id="sikpi"></div><div id="sigrp"></div>
+    <small class="dim">CPU-/RAM-Last aktualisieren sich alle paar Sekunden live · alle Werte kommen direkt vom System.</small>
+  </section>
+  <section id="p-search" class="pg">
+    <div class="hd"><h1>Suche</h1><p class="sub">Tweaks und Seiten durchsuchen (Strg+K).</p></div>
+    <div class="gmsearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="sq" type="text" autocomplete="off" spellcheck="false" placeholder="Name oder Beschreibung eingeben …" aria-label="Suche"><button class="gmqx" id="sqx" type="button" hidden aria-label="Suche leeren">✕</button></div>
+    <div id="sres" class="tlist"></div>
+  </section>
+  <section id="p-crosshair" class="pg">
+    <div class="hd"><h1>Crosshair</h1><p class="sub">Eigenes Fadenkreuz-Overlay</p></div>
+    <div class="panel card"><div class="trow"><div class="tx"><b>Eigenes Fadenkreuz</b><span>Klickdurchlässiges Fadenkreuz-Fenster, das über jedem Spiel oder Fenster angezeigt wird. Beeinflusst niemals Maus- oder Tastatureingaben.</span></div><div class="sw" id="chsw" role="switch" aria-checked="false" tabindex="0"></div></div></div>
+    <div class="chprev"><canvas id="chcv" width="400" height="160"></canvas></div>
+    <div class="chl">Anzeige</div>
+    <div class="chopts"><label>Monitor<select id="chdisp" class="inp"></select></label>
+      <div class="tgl">An Auflösung anpassen<div class="sw" data-b="autoScale" role="switch" tabindex="0"></div></div>
+      <div class="tgl">Nur anzeigen, wenn ein Spiel läuft<div class="sw" data-b="onlyGame" role="switch" tabindex="0"></div></div></div>
+    <p class="dim chhint" style="margin-top:8px">Auflösung: Das Fadenkreuz skaliert mit der Monitor-Höhe (Basis 1080p), damit es auf 1440p/4K gleich groß wirkt. Spiele: erkannt werden die Spiele-Liste, eigene .exe-Einträge, FiveM und GTA V.</p>
+    <div class="chl">Presets</div><div class="chpre" id="chpre"></div>
+    <div class="chl">Form</div><div class="chips" id="chshape"></div>
+    <div class="chl">Farbe</div><div class="chcol" id="chcol"></div>
+    <div class="chl">Anpassen</div><div class="chopts" id="chopts"></div>
+    <p class="dim chhint">Hinweis: In echtem DirectX-Vollbild (nicht randlos/Fenster) kann Windows jedes Overlay-Fenster verdecken – das betrifft alle Tools dieser Art. Für zuverlässige Sichtbarkeit „Randlos“ oder „Fenstermodus“ im Spiel einstellen.</p>
+  </section>
+  <section id="p-tweaks" class="pg">
+    <div class="hd hrow"><div><h1 id="twh">Tweaks</h1><p class="sub" id="twsub">Jeder Tweak ist einzeln umkehrbar – Originalwerte werden gesichert.</p></div><span class="sp"></span><div class="row"><button class="btn pri" id="twrec">Empfohlene anwenden</button><button class="btn" id="twoff">Alle zurücksetzen</button></div></div>
+    <div class="chips" id="chips"></div><div id="tlist" class="tlist"></div>
+  </section>
+  <section id="p-cleaner" class="pg">
+    <div class="hd"><h1>Cleaner</h1><p class="sub">Temporäre Dateien und Caches entfernen.</p></div>
+    <div class="panel card"><div class="ph"><h3>Bereiche</h3><div class="acts"><button class="btn" id="cscan">Neu scannen</button><button class="btn pri" id="crun">Ausgewählte löschen</button></div></div><div id="clist"></div>
+      <div class="total">Gesamt: <b id="ctotal">–</b></div></div>
+    <div class="panel card"><div class="ph"><h3>Netzwerk</h3></div><div class="trow"><div class="tx"><b>DNS-Cache leeren</b><span>Behebt veraltete Einträge und Verbindungsprobleme.</span></div><button class="btn" id="dns">Ausführen</button></div></div>
+  </section>
+  <section id="p-backup" class="pg">
+    <div class="hd"><h1>Backup</h1><p class="sub">Wiederherstellungspunkt anlegen.</p></div>
+    <div class="panel card"><div class="trow"><div class="tx"><b>Wiederherstellungspunkte</b><span>Windows-Systemwiederherstellung. Setzt Systemdateien, Registry und Treiber auf den gewählten Zeitpunkt zurück. Deine eigenen Dateien bleiben unberührt.</span></div></div></div>
+    <div class="acts" style="margin-bottom:16px"><button class="btn pri" id="rpCreate">+ Punkt erstellen</button><button class="btn" id="rpRefresh">Aktualisieren</button><button class="btn" id="rpOpen">Systemwiederherstellung öffnen</button></div>
+    <div id="rplist" class="tlist"></div>
+  </section>
+  <section id="p-restore" class="pg">
+    <div class="hd"><h1>Restore</h1><p class="sub">Reparieren &amp; Zurücksetzen.</p></div>
+    <div class="panel card dangerp"><div class="trow"><div class="tx"><b>Restore All</b><span>Setzt ALLE sichtbaren Tweak-Nebenwirkungen auf Windows-Standard zurück: Cursor, Suchleiste, Animationen/Rahmen, Skalierung, Defender und deaktivierte Dienste.</span></div><button class="btn dng" id="fixAll">Restore All</button></div></div>
+    <div id="fixlist" class="tlist"></div>
+  </section>
+  <section id="p-presets" class="pg">
+    <div class="hd hrow"><div><h1>FiveM Presets</h1><p class="sub">Grafik- &amp; Audio-Mods für FiveM – automatisch aus der Community gesammelt.</p></div><span class="sp"></span><input id="prq" class="inp" type="search" placeholder="Suchen…" aria-label="Presets suchen"><button class="btn" id="prrf">Aktualisieren</button></div>
+    <div class="chips" id="prtabs"></div>
+    <div class="panel card prnote" id="prnote"></div>
+    <div class="panel card prdir" id="prdir"></div>
+    <div class="prgrid" id="prgrid"></div>
+    <details class="panel card prsrc"><summary>Quelle (Bot-Adresse)</summary><div class="row"><input id="prurl" class="inp wide" placeholder="http://dein-server:8787/presets.json?key=…"><button class="btn pri" id="prsave">Speichern</button></div></details>
+  </section>
+  <section id="p-fivem" class="pg">
+    <div class="hd"><h1>FiveM</h1><p class="sub">FiveM / GTA Performance</p></div>
+    <div class="acts fvbar"><button class="btn" id="fvall">✓ Alle auswählen</button><button class="btn" id="fvnone">✕ Auswahl leeren</button></div>
+    <div class="fvgrid" id="fvgrid"></div>
+  </section>
+  <section id="p-fivemclean" class="pg">
+    <div class="hd"><h1>FiveM Clearen</h1><p class="sub">FiveM-Cache, Shader-Cache &amp; Bloatware</p></div>
+    <div class="fcgrid">
+      <div class="panel card fcc"><span class="tg2 ok">✓ SICHER</span><h2>SHADER <em>CACHE.</em></h2><p>D3DSCache + NVIDIA + AMD + Intel. Beseitigt Stutter nach einem GPU-Treiber-Update. Wird beim nächsten Start automatisch neu aufgebaut.</p><div class="fcf"><small>Aktuell: <b id="fvsh">–</b></small><button class="btn" id="fvshb">Cache leeren</button></div></div>
+      <div class="panel card fcc"><span class="tg2 or">⚡ FIVEM</span><h2>FIVEM <em>CACHE.</em></h2><p>Löscht cache, server-cache und server-cache-priv. FiveM lädt die Server-Assets beim nächsten Join neu.</p><div class="fcf"><small>Aktuell: <b id="fvfm">–</b></small><button class="btn" id="fvfmb">Cache löschen</button></div></div>
+    </div>
+    <div class="panel card fcb"><div class="fch">DEBLOAT · BLOATWARE ENTFERNEN</div><p>Aggressiv entfernt auch Store/Xbox/Fotos – kann UWP-Updates und Anti-Cheats brechen.</p>
+      <div class="acts"><button class="btn mode on" data-m="safe">Safe</button><button class="btn mode" data-m="aggressive">⚠ Aggressive</button><button class="btn" id="fvscan">Scan</button><button class="btn" id="fvrm" disabled>Entfernen (0)</button></div>
+      <div id="fvbl" class="fcl"></div><small class="dim" id="fvblh">Klicke „Scan“, um installierte Bloatware zu finden.</small></div>
+    <div class="panel card fcb"><div class="fch">ERWEITERTE BEREINIGUNG</div><p>Temp-Dateien, Papierkorb und die Windows-Datenträgerbereinigung.</p>
+      <div class="acts"><button class="btn" data-x="temp">Temp-Dateien</button><button class="btn" data-x="bin">Papierkorb leeren</button><button class="btn" data-x="disk">Datenträgerbereinigung</button></div></div>
+  </section>
+  <section id="p-games" class="pg">
+    <div id="gmlist">
+      <div class="hd hrow"><div><h1>Spiele</h1><p class="sub">Spiel auswählen, um die passenden Tweaks anzuzeigen.</p></div></div>
+      <div class="gmsearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="gmq" type="text" autocomplete="off" spellcheck="false" placeholder="Spiel suchen – Name, .exe oder Kategorie" aria-label="Spiel suchen"><button class="gmqx" id="gmqx" type="button" hidden aria-label="Suche leeren">✕</button><span class="gmqn" id="gmqn"></span><kbd>/</kbd></div>
+      <div class="chips" id="gmchips"></div>
+      <div class="gmgrid" id="gmgrid"></div>
+      <div class="panel card gmadd"><div class="tx"><b>Eigenes Spiel hinzufügen</b><span>Dateiname der Spiel-.exe, z. B. <code>mygame.exe</code> (Task-Manager → Details).</span></div><input id="gmexe" class="inp" placeholder="spiel.exe"><button class="btn pri" id="gmaddb">Hinzufügen</button></div>
+    </div>
+    <div id="gmdet" hidden></div>
+  </section>
+  <section id="p-settings" class="pg"></section>
+</main>
+<div id="toast"></div>
+<script src="app.js"></script>
+<script src="presets.js"></script>
+<script src="fivem.js"></script>
+<script src="ingame.js"></script>
+<script src="games.js"></script>
+<script src="sysinfo.js"></script>
+<script src="settings.js"></script>
+<script src="search.js"></script>
+<script src="crosshair-draw.js"></script>
+<script src="crosshair.js"></script>
+<script src="license.js"></script>
+</body></html>

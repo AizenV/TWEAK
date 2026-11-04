@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Attack.tweaks · Lizenzen</title>
+<style>
+:root{--bg:#0b0b0c;--panel:#141416;--panel2:#1b1b1e;--line:#242427;--line2:#34343a;--fg:#f4f4f5;--mute:#a1a1aa;--dim:#71717a;--good:#34d399;--warn:#f5b83d;--bad:#f2566f;--info:#4da3ff;--blur:#5865f2;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:ui-monospace,'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box;margin:0}html,body{min-height:100%}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 24px 70px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#fff,#a1a1aa);color:#000;display:grid;place-items:center;font-weight:800;font-size:18px}
+header h1{font-size:22px;letter-spacing:-.02em;line-height:1.2}header p{color:var(--mute);font-size:13px}.sp{flex:1}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px}
+.ph{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}.ph h3{font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi small{color:var(--dim);font-size:12px;display:block}.kpi b{font-size:26px;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi i{font-style:normal;font-size:12.5px;color:var(--dim);margin-left:6px}
+label,.lb{display:block;font-size:12px;color:var(--mute);margin-bottom:6px;font-weight:550}
+.inp,select{width:100%;background:var(--panel2);color:var(--fg);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font:inherit;font-size:13.5px;outline:none;transition:.15s}
+.inp:focus,select:focus{border-color:#7c7c86}.mono{font-family:var(--mono);font-size:12.5px}
+.btn{background:var(--panel2);color:var(--fg);border:1px solid var(--line2);border-radius:10px;padding:9px 15px;font:inherit;font-size:13px;font-weight:550;cursor:pointer;transition:.15s;white-space:nowrap}
+.btn:hover{background:#27272b}.btn.pri{background:var(--fg);color:#000;border-color:var(--fg)}.btn.pri:hover{background:#fff}
+.btn.sm{padding:6px 12px;font-size:12.5px}.btn.dng{color:var(--bad);border-color:rgba(242,86,111,.4)}.btn.dng:hover{background:rgba(242,86,111,.1)}
+.btn.good{color:var(--good);border-color:rgba(52,211,153,.4)}.btn.dng2{background:var(--bad);border-color:var(--bad);color:#fff}.btn:disabled{opacity:.5;pointer-events:none}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.pc{position:relative;cursor:pointer;margin:0}.pc input{position:absolute;opacity:0}
+.pc span{display:block;padding:12px 14px;border:1px solid var(--line2);border-radius:12px;background:var(--panel2);transition:.15s}
+.pc span b{display:block;font-size:14px}.pc span small{color:var(--mute);font-size:12.5px}.pc span em{float:right;font-style:normal;font-weight:650}
+.pc:hover span{border-color:#555}.pc input:checked+span{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg);background:#212125}
+.pc input:focus-visible+span{outline:2px solid var(--info);outline-offset:2px}
+.f2{display:grid;grid-template-columns:1.2fr 1fr auto;gap:12px;align-items:start}
+.pv{margin-top:8px;min-height:44px;display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px dashed var(--line2);border-radius:10px;color:var(--dim);font-size:12.5px}
+.pv.ok{border:1px solid rgba(52,211,153,.45);background:rgba(52,211,153,.06);color:var(--fg)}.pv.bad{border-color:rgba(242,86,111,.45);color:var(--bad)}
+.pv .nm{font-weight:600;font-size:14px}.pv .sub{color:var(--mute);font-size:12px}
+.made{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 16px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.07);border-radius:12px;flex-wrap:wrap}
+.made b{font-family:var(--mono);font-size:19px;letter-spacing:.05em}.made .sub{color:var(--mute);font-size:12.5px;flex-basis:100%}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 13px;border-radius:99px;border:1px solid var(--line2);color:var(--mute);cursor:pointer;font-size:13px;user-select:none;transition:.15s}
+.chip:hover{color:var(--fg)}.chip.on{background:var(--fg);color:#000;border-color:var(--fg)}.chip em{font-style:normal;opacity:.6;margin-left:6px;font-size:12px}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.tools .inp{width:240px}.tools select{width:auto}
+.av{position:relative;flex:none;width:38px;height:38px;border-radius:50%;background:var(--blur);display:grid;place-items:center;overflow:hidden;font-size:15px}
+.av b{font-weight:650;color:#fff}.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.av.sm{width:30px;height:30px;font-size:12px}
+.kr{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin-bottom:8px;transition:.15s;overflow:hidden}
+.kr:hover{border-color:var(--line2)}.kr.open{border-color:#4a4a52;background:#17171a}
+.kh{display:grid;grid-template-columns:minmax(200px,1.2fr) minmax(210px,1.1fr) minmax(170px,.9fr) 16px;gap:16px;align-items:center;padding:13px 16px;cursor:pointer}
+.u{display:flex;align-items:center;gap:12px;min-width:0}.un{min-width:0}
+.nm{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sub{color:var(--dim);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.k{font-family:var(--mono);font-size:13px;letter-spacing:.02em;cursor:copy}.k:hover{color:#fff;text-decoration:underline dotted}
+.chev{color:var(--dim);font-size:20px;transition:.15s;text-align:center}.kr.open .chev{transform:rotate(90deg)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:99px;border:1px solid var(--line2);color:var(--mute);white-space:nowrap}
+.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.active{color:var(--good);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.07)}.pill.unused{color:var(--info);border-color:rgba(77,163,255,.4);background:rgba(77,163,255,.07)}
+.pill.expired{color:var(--warn);border-color:rgba(245,184,61,.4);background:rgba(245,184,61,.07)}.pill.revoked{color:var(--bad);border-color:rgba(242,86,111,.4);background:rgba(242,86,111,.07)}
+.st .sub{margin-top:3px}.bar{height:4px;background:var(--line2);border-radius:9px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;border-radius:9px;background:var(--c,var(--good))}
+.kd{border-top:1px solid var(--line);padding:16px 16px 16px 66px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 18px;margin-bottom:16px;font-size:13px}.facts small{display:block;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.facts .wide{grid-column:1/-1}.cp{cursor:copy;word-break:break-all}.cp:hover{color:#fff}.dim{color:var(--dim)}.mute{color:var(--mute)}
+.acts{display:flex;gap:8px;flex-wrap:wrap}.acts .r{margin-left:auto}
+.empty{color:var(--dim);padding:34px 4px;text-align:center}
+.lg{display:grid;grid-template-columns:130px 130px 1fr;gap:9px 14px;font-size:13px;align-items:center}
+.tag{font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:99px;border:1px solid var(--line2);color:var(--mute);justify-self:start}
+.tag.fail{color:var(--bad);border-color:rgba(242,86,111,.4)}.tag.activate,.tag.create,.tag.bind,.tag.boost{color:var(--good);border-color:rgba(52,211,153,.4)}.tag.revoke,.tag.delete{color:var(--warn);border-color:rgba(245,184,61,.4)}
+#login{max-width:350px;margin:15vh auto 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px}
+#login h1{font-size:21px;margin:14px 0 2px}#login p{color:var(--mute);margin-bottom:20px}.err{color:var(--bad);font-size:13px;margin-top:10px;min-height:18px}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.65);display:grid;place-items:center;z-index:20;padding:20px}
+.mc{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:22px;width:100%;max-width:400px}.mc h3{font-size:16px;margin-bottom:6px}.mc p{color:var(--mute);margin-bottom:14px;font-size:13.5px;word-break:break-word}
+.mb{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}
+#toast{position:fixed;bottom:22px;right:22px;background:#202024;border:1px solid var(--line2);padding:11px 16px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none;z-index:30;max-width:420px}#toast.on{opacity:1;transform:none}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.f2{grid-template-columns:1fr}.kh{grid-template-columns:1fr 16px}.kk,.st{grid-column:1}.kd{padding-left:16px}.facts{grid-template-columns:1fr 1fr}.tools .inp{width:100%}.lg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.rc{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;padding:1px 9px;border-radius:99px;border:1px solid var(--line2);color:var(--mute);margin:4px 5px 0 0;white-space:nowrap}.rc:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,#71717a)}.rl{overflow:hidden;white-space:nowrap}.rl .rc{margin-top:3px}
+</style></head>
+<body>
+<div id="login" hidden>
+  <div class="logo">A</div><h1>Lizenz-Admin</h1><p>Attack.tweaks</p>
+  <label for="pw">Passwort</label><input id="pw" class="inp" type="password" autocomplete="current-password">
+  <div class="err" id="lerr"></div>
+  <button class="btn pri" id="lgo" style="width:100%">Anmelden</button>
+</div>
+
+<div class="wrap" id="app" hidden>
+  <header><div class="logo">A</div><div><h1>Lizenzen</h1><p>Attack.tweaks · Aktivierung nur mit Discord-Login</p></div><span class="sp"></span>
+    <button class="btn" id="rn" hidden title="Namen, Profilbilder und Rollen aller Keys neu von Discord laden">Discord-Daten aktualisieren</button><button class="btn" id="rf">Aktualisieren</button><button class="btn" id="out">Abmelden</button></header>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="panel">
+    <div class="ph"><h3>Neuen Key erstellen</h3></div>
+    <div class="lb">1 · Tarif</div><div class="plans" id="plans"></div>
+    <div class="f2">
+      <div><label for="fid">2 · Discord-ID <span class="dim">(optional)</span></label><input id="fid" class="inp mono" inputmode="numeric" maxlength="20" autocomplete="off" placeholder="z. B. 123456789012345678">
+        <div class="pv" id="pv">Name und Profilbild werden automatisch geladen, sobald du die ID einfügst.</div></div>
+      <div><label for="fnote">3 · Notiz <span class="dim">(optional)</span></label><input id="fnote" class="inp" maxlength="200" placeholder="z. B. PayPal 04.11."></div>
+      <div><label>&nbsp;</label><button class="btn pri" id="fgo" style="padding:10px 22px">Key erstellen</button></div>
+    </div>
+    <div class="made" id="made" hidden><b id="mk"></b><button class="btn sm" id="mcp">Kopieren</button><span id="mu"></span><div class="sub" id="mw"></div></div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><div class="chips" id="tabs"><span class="chip on" data-t="keys">Keys</span><span class="chip" data-t="log">Aktivität</span></div></div>
+    <div class="tools" id="tools"><div class="chips" id="flt"></div><span class="sp"></span>
+      <select id="rsel" aria-label="Nach Discord-Rolle filtern" hidden></select>
+      <select id="srt" aria-label="Sortierung"><option value="new">Neueste zuerst</option><option value="exp">Läuft bald ab</option><option value="seen">Zuletzt online</option><option value="name">Name A–Z</option></select>
+      <input id="q" class="inp" type="search" placeholder="Suchen: Name, Discord-ID, Key, HWID …" aria-label="Suchen"></div>
+    <div id="tw"></div>
+  </div>
+</div>
+<div class="md" id="md" hidden><div class="mc" role="dialog" aria-modal="true" aria-labelledby="mt"><h3 id="mt"></h3><p id="mx"></p><div id="mi"></div><div class="mb"><button class="btn" id="mn">Abbrechen</button><button class="btn pri" id="my">OK</button></div></div></div>
+<div id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let D=null,flt='all',tab='keys',pend=0;const OPEN=new Set();
+const ST={active:'Aktiv',unused:'Nicht aktiviert',expired:'Abgelaufen',revoked:'Gesperrt'};
+const LT={create:'Erstellt',activate:'Aktiviert',fail:'Fehlversuch',revoke:'Gesperrt',unrevoke:'Entsperrt',reset:'HWID-Reset',extend:'Verlängert',delete:'Gelöscht',bind:'Discord erkannt',boost:'Boost',names:'Namen'};
+const fd=t=>{if(!t)return '–';const d=new Date(t);return d.toLocaleDateString('de-DE')+' '+d.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})};
+const ago=t=>{if(!t)return '–';const s=(Date.now()-t)/1e3;if(s<60)return 'gerade eben';if(s<3600)return `vor ${Math.floor(s/60)} Min.`;if(s<86400)return `vor ${Math.floor(s/3600)} Std.`;const d=Math.floor(s/86400);return d===1?'gestern':`vor ${d} Tagen`};
+const rest=ms=>{const d=ms/864e5;return d>=1?`${Math.ceil(d)} ${Math.ceil(d)===1?'Tag':'Tage'}`:`${Math.max(1,Math.round(ms/36e5))} Std.`};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),2800)}
+async function api(p,b){
+  const r=await fetch('/admin/api/'+p,{method:b===undefined?'GET':'POST',headers:{'x-admin':'1','content-type':'application/json'},body:b===undefined?undefined:JSON.stringify(b)});
+  let j={};try{j=await r.json()}catch{}
+  if(r.status===401&&p!=='login'){showLogin();throw new Error('login')}
+  if(!r.ok)throw new Error(j.error||'Fehler');return j;
+}
+function copy(t){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();document.execCommand('copy');a.remove()});toast('Kopiert')}
+function ask(o){return new Promise(res=>{
+  $('#mt').textContent=o.title;$('#mx').textContent=o.text||'';const mi=$('#mi');
+  mi.innerHTML=o.input?`${o.chips?`<div class="chips" style="margin-bottom:10px">${o.chips.map(c=>`<span class="chip" data-v="${esc(c)}">${esc(c)}</span>`).join('')}</div>`:''}<input class="inp" id="mv" value="${esc(o.value||'')}"${o.type?` type="${o.type}"`:''}${o.max?` maxlength="${o.max}"`:''} placeholder="${esc(o.ph||'')}">`:'';
+  const y=$('#my'),m=$('#md');y.textContent=o.ok||'OK';y.className='btn '+(o.danger?'dng2':'pri');m.hidden=false;
+  const done=v=>{m.hidden=true;document.removeEventListener('keydown',kd);res(v)};
+  const kd=e=>{if(e.key==='Escape')done(null);if(e.key==='Enter'&&e.target.tagName!=='BUTTON')y.click()};
+  document.addEventListener('keydown',kd);
+  $('#mn').onclick=()=>done(null);y.onclick=()=>done(o.input?$('#mv').value:true);m.onclick=e=>{if(e.target===m)done(null)};
+  mi.onclick=e=>{const c=e.target.closest('[data-v]');if(c)$('#mv').value=c.dataset.v};
+  setTimeout(()=>(o.input?$('#mv'):y).focus(),30);
+})}
+const hexc=c=>/^#[0-9a-f]{6}$/i.test(c||'')?c:'#71717a';
+const rchip=r=>`<span class="rc" style="--c:${hexc(r.color)}">${esc(r.name)}</span>`;
+const rolesHtml=k=>!k.discordId?'<span class="dim">Noch keine Discord-ID</span>':!D.roles?'<span class="dim">Server nicht verbunden – <span class="mono">discord.guildId</span> in config.json eintragen</span>':k.inGuild===false?'<span class="dim">Nicht auf deinem Discord-Server</span>':(k.discordRoles||[]).length?k.discordRoles.map(rchip).join(''):'<span class="dim">Keine Rollen (oder noch nicht geladen)</span>';
+const pvRoles=u=>!D.roles?'':u.inGuild===false?'<div class="sub" style="color:var(--warn)">Nicht auf deinem Discord-Server</div>':(u.roles||[]).length?`<div>${u.roles.map(rchip).join('')}</div>`:'';
+const av=(u,cls)=>{const n=([...String(u.discordName||'?').trim()][0]||'?').toUpperCase(),a=/^https:\/\/cdn\.discordapp\.com\//.test(u.discordAvatar||'')?u.discordAvatar:'';return `<span class="av ${cls||''}"><b>${esc(n)}</b>${a?`<img src="${esc(a)}" alt="" loading="lazy">`:''}</span>`};
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG')e.target.remove()},true);
+
+function showLogin(){$('#app').hidden=true;$('#login').hidden=false;$('#pw').focus()}
+async function login(){$('#lerr').textContent='';try{await api('login',{password:$('#pw').value});$('#pw').value='';$('#login').hidden=true;load()}catch(e){$('#lerr').textContent=e.message}}
+$('#lgo').onclick=login;$('#pw').onkeydown=e=>{if(e.key==='Enter')login()};
+$('#out').onclick=async()=>{await api('logout',{}).catch(()=>{});showLogin()};
+$('#rf').onclick=()=>{pend=0;load(true)};
+$('#rn').onclick=async()=>{const b=$('#rn');b.disabled=true;try{const r=await api('refresh-names',{});toast(`${r.updated} Namen aktualisiert`+(r.failed?`, ${r.failed} fehlgeschlagen`:''));await load()}catch(e){toast(e.message)}finally{b.disabled=false}};
+
+async function load(t){
+  try{D=await api('list')}catch(e){if(e.message!=='login')toast(e.message);return}
+  $('#app').hidden=false;$('#login').hidden=true;$('#rn').hidden=!D.lookup;
+  {const rs=[...new Set(D.keys.flatMap(k=>(k.discordRoles||[]).map(r=>r.name)))].sort((a,b)=>a.localeCompare(b,'de')),sel=$('#rsel'),cv=sel.value;
+   sel.hidden=!D.roles||!rs.length;sel.innerHTML='<option value="">Alle Rollen</option>'+rs.map(n=>`<option>${esc(n)}</option>`).join('');if(rs.includes(cv))sel.value=cv}
+  const s=D.stats,soon=D.keys.filter(k=>k.status==='active'&&k.expiresAt&&k.expiresAt-Date.now()<7*864e5).length;
+  $('#kpis').innerHTML=[['Aktive Keys',s.active,`von ${s.total}`],['Nicht aktiviert',s.unused,''],['Läuft in 7 Tagen ab',soon,s.expired?`${s.expired} abgelaufen`:''],['Umsatz',s.revenue.toLocaleString('de-DE')+' €',s.revoked?`${s.revoked} gesperrt`:'']].map(([a,b,c])=>`<div class="kpi"><small>${a}</small><b>${esc(b)}</b>${c?`<i>${esc(c)}</i>`:''}</div>`).join('');
+  const cur=(document.querySelector('input[name=plan]:checked')||{}).value;
+  $('#plans').innerHTML=D.plans.map((p,i)=>`<label class="pc"><input type="radio" name="plan" value="${esc(p.id)}"${(cur?cur===p.id:i===0)?' checked':''}><span><em>${esc(p.price)} €</em><b>${esc(p.name)}</b><small>${p.days?p.days+' Tage ab Aktivierung':'ohne Ablauf'}</small></span></label>`).join('');
+  render();if(t)toast('Aktualisiert');
+  if(D.pending>0&&pend<3){pend++;setTimeout(()=>load(),2500)}else if(!D.pending)pend=0;
+}
+function lifeOf(k){
+  const now=Date.now();
+  if(k.status==='revoked')return{t:'Zugriff entzogen'};
+  if(k.status==='unused')return{t:`${k.planName} · startet bei Aktivierung`};
+  if(k.status==='expired')return{t:`abgelaufen ${ago(k.expiresAt)}`};
+  if(k.lifetime)return{t:'Lifetime · läuft nie ab'};
+  const tot=k.expiresAt-k.activatedAt,p=Math.max(0,Math.min(1,(k.expiresAt-now)/tot)),d=(k.expiresAt-now)/864e5;
+  return{t:`noch ${rest(k.expiresAt-now)} · bis ${new Date(k.expiresAt).toLocaleDateString('de-DE')}`,bar:`<div class="bar"><i style="width:${Math.round(p*100)}%;--c:${d<=3?'var(--bad)':d<=7?'var(--warn)':'var(--good)'}"></i></div>`};
+}
+function detail(k){return `<div class="kd"><div class="facts">
+  <div><small>Erstellt</small>${fd(k.createdAt)}</div><div><small>Aktiviert</small>${fd(k.activatedAt)}</div>
+  <div><small>Läuft ab</small>${k.lifetime?'Nie (Lifetime)':k.expiresAt?fd(k.expiresAt):'Ab Aktivierung'}</div>
+  <div><small>Zuletzt online</small>${k.lastSeen?`${ago(k.lastSeen)}<span class="dim"> · ${fd(k.lastSeen)}</span>`:'–'}</div>
+  <div class="wide"><small>Discord-Rollen</small>${rolesHtml(k)}</div>
+  <div class="wide"><small>Hardware-ID</small>${k.hwid?`<span class="mono cp" data-c="${esc(k.hwid)}" title="Kopieren">${esc(k.hwid)}</span>`:'<span class="dim">Noch kein PC gebunden</span>'}${k.hwidResets?`<span class="dim"> · ${k.hwidResets}× zurückgesetzt</span>`:''}</div>
+  ${k.note?`<div class="wide"><small>Notiz</small>${esc(k.note)}</div>`:''}</div>
+  <div class="acts">${k.discordId&&D.lookup?'<button class="btn sm" data-a="refresh-one" title="Name, Bild und Rollen neu von Discord holen">Discord neu laden</button>':''}${k.hwid?'<button class="btn sm" data-a="reset-hwid">HWID zurücksetzen</button>':''}${k.lifetime?'':'<button class="btn sm" data-a="extend">+ Tage</button>'}<button class="btn sm" data-a="note">Notiz</button>
+  ${k.status==='revoked'?'<button class="btn sm good" data-a="unrevoke">Entsperren</button>':'<button class="btn sm" data-a="revoke">Sperren</button>'}<button class="btn sm dng r" data-a="delete">Löschen</button></div></div>`}
+function row(k){
+  const o=OPEN.has(k.key),l=lifeOf(k);
+  return `<div class="kr${o?' open':''}" data-k="${esc(k.key)}"><div class="kh" tabindex="0" role="button" aria-expanded="${o}">
+  <div class="u">${av(k)}<div class="un"><div class="nm">${k.discordName?esc(k.discordName):k.discordId?'<span class="dim">Name wird geladen …</span>':'<span class="dim">Noch nicht zugeordnet</span>'}</div><div class="sub mono">${k.discordId?esc(k.discordId):'wird beim Login erkannt'}</div>${(k.discordRoles||[]).length?`<div class="rl">${k.discordRoles.slice(0,2).map(rchip).join('')}${k.discordRoles.length>2?`<span class="rc" style="--c:#71717a">+${k.discordRoles.length-2}</span>`:''}</div>`:''}</div></div>
+  <div class="kk"><span class="k" data-c="${esc(k.key)}" title="Zum Kopieren klicken">${esc(k.key)}</span><div class="sub">${esc(k.planName)}${k.note?' · '+esc(k.note):''}</div></div>
+  <div class="st"><span class="pill ${k.status}">${ST[k.status]}</span><div class="sub">${esc(l.t)}</div>${l.bar||''}</div><span class="chev" aria-hidden="true">›</span></div>${o?detail(k):''}</div>`}
+function render(){
+  const q=$('#q').value.trim().toLowerCase();
+  document.querySelectorAll('#tabs .chip').forEach(c=>c.classList.toggle('on',c.dataset.t===tab));
+  $('#tools').hidden=tab!=='keys';
+  if(tab==='log'){
+    $('#tw').innerHTML=D.log.length?`<div class="lg">${D.log.map(l=>`<span class="dim">${fd(l.t)}</span><span class="tag ${esc(l.type)}">${esc(LT[l.type]||l.type)}</span><span class="mute">${esc(l.key)} ${esc(l.msg)}</span>`).join('')}</div>`:'<div class="empty">Noch keine Aktivität.</div>';return}
+  const cnt=k=>D.keys.filter(x=>k==='all'||x.status===k).length;
+  $('#flt').innerHTML=[['all','Alle'],['active','Aktiv'],['unused','Nicht aktiviert'],['expired','Abgelaufen'],['revoked','Gesperrt']].map(([k,n])=>`<span class="chip${flt===k?' on':''}" data-f="${k}">${n}<em>${cnt(k)}</em></span>`).join('');
+  const so=$('#srt').value,INF=9e15;
+  const cmp={new:(a,b)=>b.createdAt-a.createdAt,exp:(a,b)=>(a.status==='active'&&a.expiresAt?a.expiresAt:INF)-(b.status==='active'&&b.expiresAt?b.expiresAt:INF),seen:(a,b)=>(b.lastSeen||0)-(a.lastSeen||0),name:(a,b)=>(a.discordName||'~').localeCompare(b.discordName||'~','de')}[so];
+  const rows=D.keys.filter(k=>(flt==='all'||k.status===flt)&&(!$('#rsel').value||(k.discordRoles||[]).some(r=>r.name===$('#rsel').value))&&(!q||[k.key,k.discordId,k.discordName,k.note,k.hwid,k.planName,(k.discordRoles||[]).map(r=>r.name).join(' ')].join(' ').toLowerCase().includes(q))).sort(cmp);
+  $('#tw').innerHTML=rows.length?rows.map(row).join(''):`<div class="empty">${D.keys.length?'Keine Treffer.':'Noch keine Keys – erstelle oben den ersten.'}</div>`;
+}
+$('#tabs').onclick=e=>{const c=e.target.closest('.chip');if(c){tab=c.dataset.t;render()}};
+$('#flt').onclick=e=>{const c=e.target.closest('.chip');if(c){flt=c.dataset.f;render()}};
+$('#q').oninput=render;$('#rsel').onchange=render;$('#srt').onchange=render;
+const toggle=key=>{OPEN.has(key)?OPEN.delete(key):OPEN.add(key);render()};
+$('#tw').onkeydown=e=>{const h=e.target.closest('.kh');if(h&&e.target===h&&(e.key==='Enter'||e.key===' ')){e.preventDefault();toggle(h.closest('.kr').dataset.k)}};
+$('#tw').onclick=async e=>{
+  const c=e.target.closest('[data-c]');if(c){copy(c.dataset.c);return}
+  const r=e.target.closest('.kr'),b=e.target.closest('[data-a]');
+  if(!b){if(r&&e.target.closest('.kh'))toggle(r.dataset.k);return}
+  const key=r.dataset.k,a=b.dataset.a,k=D.keys.find(x=>x.key===key),body={key},who=k.discordName||k.discordId||'';
+  if(a==='delete'&&!await ask({title:'Key löschen?',text:`${key}${who?' ('+who+')':''} wird endgültig gelöscht. Die App verliert die Lizenz beim nächsten Check.`,ok:'Löschen',danger:1}))return;
+  if(a==='revoke'&&!await ask({title:'Key sperren?',text:`${who||key} verliert die Lizenz beim nächsten Check (Start oder alle 30 Min.). Du kannst den Key später wieder entsperren.`,ok:'Sperren',danger:1}))return;
+  if(a==='reset-hwid'&&!await ask({title:'Hardware-ID zurücksetzen?',text:'Der Key kann danach auf einem neuen PC aktiviert werden. Die Restlaufzeit bleibt erhalten.',ok:'Zurücksetzen'}))return;
+  if(a==='extend'){const d=await ask({title:'Key verlängern',text:'Um wie viele Tage?',input:1,type:'number',value:'7',chips:['7','30','90'],ok:'Verlängern'});if(!d)return;body.days=+d}
+  if(a==='note'){const n=await ask({title:'Notiz',text:key,input:1,value:k.note,max:200,ph:'z. B. PayPal 04.11.',ok:'Speichern'});if(n===null)return;body.note=n}
+  b.disabled=true;
+  try{await api(a,body);toast('Gespeichert');await load()}catch(er){toast(er.message);b.disabled=false}
+};
+
+// Live-Vorschau: Discord-Name per ID
+let lt=0,found=null;
+function pv(cls,html){const p=$('#pv');p.className='pv '+cls;p.innerHTML=html}
+const hint='Name und Profilbild werden automatisch geladen, sobald du die ID einfügst.';
+$('#fid').oninput=()=>{
+  const i=$('#fid'),v=i.value=i.value.replace(/\D/g,'');found=null;clearTimeout(lt);
+  if(!v)return pv('',hint);
+  if(v.length<17)return pv('','Discord-ID hat 17–20 Ziffern …');
+  pv('','Suche Discord-Account …');const my=lt=setTimeout(async()=>{
+    try{const r=await api('lookup',{id:v});if($('#fid').value!==v)return;
+      if(r.ok){found=r.user;pv('ok',`${av({discordName:r.user.name,discordAvatar:r.user.avatar},'sm')}<div><div class="nm">${esc(r.user.name)}</div><div class="sub">@${esc(r.user.username)} · gefunden</div>${pvRoles(r.user)}</div>`)}
+      else pv(r.code==='not_found'?'bad':'',esc(r.error));
+    }catch(e){if(e.message!=='login')pv('bad',esc(e.message))}},350);
+};
+$('#fgo').onclick=async()=>{
+  const b=$('#fgo');b.disabled=true;
+  try{
+    const r=await api('create',{plan:(document.querySelector('input[name=plan]:checked')||{}).value,discordId:$('#fid').value.trim(),note:$('#fnote').value});
+    $('#mk').textContent=r.key;$('#made').hidden=false;
+    $('#mu').innerHTML=r.user?`für <b style="font-family:inherit;font-size:14px;letter-spacing:0">${esc(r.user.name)}</b>`:'';
+    $('#mw').textContent=r.lookupError||'Der Key startet erst bei der ersten Aktivierung in der App. Dabei wird die Hardware-ID fest gebunden.';
+    $('#fid').value='';$('#fnote').value='';found=null;pv('',hint);copy(r.key);await load();
+  }catch(er){toast(er.message)}finally{b.disabled=false}
+};
+$('#mcp').onclick=()=>copy($('#mk').textContent);
+load();
+</script></body></html>

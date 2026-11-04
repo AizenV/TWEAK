@@ -1,0 +1,13 @@
+{
+  "name": "attack-presets-bot",
+  "version": "1.0.0",
+  "description": "Discord-Bot: sammelt Presets aus Kanälen und stellt sie der Attack.tweaks-App bereit",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "node test.js && node boost-test.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
